@@ -1,2 +1,2 @@
-# eco-system-sim
+# Ecosystem Simulator
 A simple Ecosystem Simulator in Godot
