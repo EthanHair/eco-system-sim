@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtp0h6rlapw1"]
+
+[ext_resource type="Script" path="res://scripts/PlantSpawner.gd" id="1_pis5n"]
+
+[node name="PlantSpawner" type="Node2D"]
+script = ExtResource("1_pis5n")
+
+[node name="BreedTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="BreedTimer" to="." method="_on_breed_timer_timeout"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bigkrwgklx016"]
+
+[ext_resource type="PackedScene" uid="uid://bntat0wagx3nr" path="res://scenes/map.tscn" id="1_ou07c"]
+[ext_resource type="PackedScene" uid="uid://dtp0h6rlapw1" path="res://scenes/plant_spawner.tscn" id="2_ks4mu"]
+[ext_resource type="PackedScene" uid="uid://b5c2io0b5fh0n" path="res://scenes/algae.tscn" id="3_42t2p"]
+
+[node name="Main" type="Node"]
+
+[node name="Map" parent="." instance=ExtResource("1_ou07c")]
+
+[node name="AlgaeSpawner" parent="." instance=ExtResource("2_ks4mu")]
+plant_scene = ExtResource("3_42t2p")
+breed_time = 0.01
+plant_group_name = "algae"
+
+[node name="Algae" parent="AlgaeSpawner" instance=ExtResource("3_42t2p")]
+position = Vector2(133, 171)
+
+[node name="Algae2" parent="AlgaeSpawner" instance=ExtResource("3_42t2p")]
+position = Vector2(266, 322)

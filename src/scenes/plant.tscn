@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://deboyqied6oe6"]
+
+[ext_resource type="Script" path="res://scripts/Plant.gd" id="1_yveon"]
+
+[node name="Plant" type="Area2D"]
+script = ExtResource("1_yveon")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

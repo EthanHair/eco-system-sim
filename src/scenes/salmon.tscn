@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqhuc573fgsmf"]
+
+[ext_resource type="Texture2D" uid="uid://2y31go1cpl2q" path="res://images/salmon.png" id="1_67iji"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6r63"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8glk"]
+atlas = ExtResource("1_67iji")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg1d1"]
+atlas = ExtResource("1_67iji")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cixa5"]
+atlas = ExtResource("1_67iji")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbqgs"]
+atlas = ExtResource("1_67iji")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbxge"]
+atlas = ExtResource("1_67iji")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2chq"]
+atlas = ExtResource("1_67iji")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b04n7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8glk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg1d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cixa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbqgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbxge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2chq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Salmon" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_k6r63")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b04n7")
+frame_progress = 0.246272
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

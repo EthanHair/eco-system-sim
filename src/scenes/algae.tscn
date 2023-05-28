@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5c2io0b5fh0n"]
+
+[ext_resource type="Texture2D" uid="uid://b2lwpvx5khnxo" path="res://images/algae.png" id="1_7tfty"]
+[ext_resource type="PackedScene" uid="uid://deboyqied6oe6" path="res://scenes/plant.tscn" id="1_oeten"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6ewe"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juypo"]
+atlas = ExtResource("1_7tfty")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fghiw"]
+atlas = ExtResource("1_7tfty")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efhwe"]
+atlas = ExtResource("1_7tfty")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gy1c"]
+atlas = ExtResource("1_7tfty")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiw5h"]
+atlas = ExtResource("1_7tfty")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_elovf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juypo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fghiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efhwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gy1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiw5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Algae" groups=["algae"] instance=ExtResource("1_oeten")]
+
+[node name="NavigationAgent2D" parent="." index="0"]
+navigation_layers = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_g6ewe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_elovf")

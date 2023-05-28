@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bntat0wagx3nr"]
+
+[ext_resource type="Texture2D" uid="uid://dto0j5um7psgv" path="res://images/map.png" id="1_h1p0h"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u0fn1"]
+vertices = PackedVector2Array(403, 511, 316, 512, 332, 498, 420, 413, 419, 497, 331, 429, 404, 398, 274, 272, 210, 308, 276, 142, 292, 158, 291, 257, 127, 307, 92, 274, 92, 159, 127, 125, 257, 124)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 0, 2, 5, 6), PackedInt32Array(7, 6, 5, 8), PackedInt32Array(9, 10, 11, 7, 8, 12, 13, 14, 15, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(403, 511, 419, 497, 420, 413, 404, 398, 274, 272, 291, 257, 292, 158, 276, 142, 257, 124, 127, 125, 92, 159, 92, 274, 127, 307, 210, 308, 331, 429, 332, 498, 316, 512)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_av76n"]
+vertices = PackedVector2Array(420, 413, 274, 272, 291, 257, 512, 512, 403, 512, 403, 511, 419, 497, 512, 0, 292, 158, 257, 124, 0, 0, 127, 125, 92, 159, 0, 512, 92, 274, 127, 307, 316, 512, 210, 308, 331, 429, 332, 498)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 3, 6, 0), PackedInt32Array(7, 0, 2, 8), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 7, 9, 11), PackedInt32Array(10, 11, 12), PackedInt32Array(13, 10, 12, 14), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(16, 15, 17, 18, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(403, 511, 419, 497, 420, 413, 274, 272, 291, 257, 292, 158, 257, 124, 127, 125, 92, 159, 92, 274, 127, 307, 210, 308, 331, 429, 332, 498, 316, 512, 0, 512, 0, 0, 512, 0, 512, 512, 403, 512)])
+
+[node name="Map" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h1p0h")
+centered = false
+
+[node name="Water" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_u0fn1")
+navigation_layers = 2
+
+[node name="Land" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_av76n")
