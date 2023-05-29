@@ -50,7 +50,8 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="Algae" groups=["algae"] instance=ExtResource("1_oeten")]
+[node name="Algae" node_paths=PackedStringArray("sprite") groups=["algae"] instance=ExtResource("1_oeten")]
+sprite = NodePath("AnimatedSprite2D")
 
 [node name="NavigationAgent2D" parent="." index="0"]
 navigation_layers = 2

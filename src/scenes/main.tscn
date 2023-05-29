@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bigkrwgklx016"]
+[gd_scene load_steps=6 format=3 uid="uid://bigkrwgklx016"]
 
 [ext_resource type="PackedScene" uid="uid://bntat0wagx3nr" path="res://scenes/map.tscn" id="1_ou07c"]
 [ext_resource type="PackedScene" uid="uid://dtp0h6rlapw1" path="res://scenes/plant_spawner.tscn" id="2_ks4mu"]
 [ext_resource type="PackedScene" uid="uid://b5c2io0b5fh0n" path="res://scenes/algae.tscn" id="3_42t2p"]
+[ext_resource type="PackedScene" uid="uid://dsgwwufagqodv" path="res://scenes/berry.tscn" id="4_jc5tm"]
+[ext_resource type="PackedScene" uid="uid://dqsl6gbnrhbnf" path="res://scenes/bunny.tscn" id="5_fdvdh"]
 
 [node name="Main" type="Node"]
 
@@ -10,11 +12,26 @@
 
 [node name="AlgaeSpawner" parent="." instance=ExtResource("2_ks4mu")]
 plant_scene = ExtResource("3_42t2p")
-breed_time = 0.01
-plant_group_name = "algae"
+breed_time = 1.0
 
 [node name="Algae" parent="AlgaeSpawner" instance=ExtResource("3_42t2p")]
-position = Vector2(133, 171)
+position = Vector2(194, 219)
 
-[node name="Algae2" parent="AlgaeSpawner" instance=ExtResource("3_42t2p")]
-position = Vector2(266, 322)
+[node name="BerrySpawner" parent="." instance=ExtResource("2_ks4mu")]
+plant_scene = ExtResource("4_jc5tm")
+breed_time = 1.0
+min_spawn_dist = 32
+max_spawn_dist = 64
+plant_type = 1
+
+[node name="Berry" parent="BerrySpawner" instance=ExtResource("4_jc5tm")]
+position = Vector2(483, 55)
+type = 1
+
+[node name="Bunny" parent="." instance=ExtResource("5_fdvdh")]
+position = Vector2(434, 95)
+speed = 700.0
+hunger_time = 3.0
+vision_dist = 300
+destination_timer_min = 2.0
+destination_timer_max = 5.0

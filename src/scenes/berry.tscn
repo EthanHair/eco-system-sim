@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsgwwufagqodv"]
+
+[ext_resource type="PackedScene" uid="uid://deboyqied6oe6" path="res://scenes/plant.tscn" id="1_v23fk"]
+[ext_resource type="Texture2D" uid="uid://bo6byha48taaw" path="res://images/berry.png" id="2_rrbw3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mudta"]
+radius = 8.0
+height = 28.0
+
+[node name="Berry" groups=["berry"] instance=ExtResource("1_v23fk")]
+animated = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+modulate = Color(0.615686, 0.615686, 0.615686, 1)
+position = Vector2(0, -8)
+texture = ExtResource("2_rrbw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mudta")

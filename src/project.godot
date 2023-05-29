@@ -12,8 +12,9 @@ config_version=5
 
 config/name="Ecosystem Sim"
 config/features=PackedStringArray("4.0", "Forward Plus")
-boot_splash/bg_color=Color(0.141176, 0.419608, 0.141176, 1)
 boot_splash/image="res://images/bunny.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 
 [autoload]
 

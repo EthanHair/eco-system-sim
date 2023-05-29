@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bntat0wagx3nr"]
+[gd_scene load_steps=5 format=3 uid="uid://bntat0wagx3nr"]
 
 [ext_resource type="Texture2D" uid="uid://dto0j5um7psgv" path="res://images/map.png" id="1_h1p0h"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_yoj2d"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_u0fn1"]
 vertices = PackedVector2Array(403, 511, 316, 512, 332, 498, 420, 413, 419, 497, 331, 429, 404, 398, 274, 272, 210, 308, 276, 142, 292, 158, 291, 257, 127, 307, 92, 274, 92, 159, 127, 125, 257, 124)
@@ -13,8 +14,10 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(403, 511, 419, 497, 420, 413, 274, 272, 291, 257, 292, 158, 257, 124, 127, 125, 92, 159, 92, 274, 127, 307, 210, 308, 331, 429, 332, 498, 316, 512, 0, 512, 0, 0, 512, 0, 512, 512, 403, 512)])
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_yoj2d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.788235, 0.788235, 0.788235, 1)
 texture = ExtResource("1_h1p0h")
 centered = false
 

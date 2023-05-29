@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://vdudygaap7ad"]
+
+[ext_resource type="Script" path="res://scripts/Animal.gd" id="1_o0cnt"]
+
+[node name="Animal" type="CharacterBody2D"]
+script = ExtResource("1_o0cnt")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+
+[node name="HungerTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DestinationTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
+[connection signal="timeout" from="DestinationTimer" to="." method="_on_destination_timer_timeout"]
