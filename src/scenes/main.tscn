@@ -25,11 +25,11 @@ max_spawn_dist = 64
 plant_type = 1
 
 [node name="Berry" parent="BerrySpawner" instance=ExtResource("4_jc5tm")]
-position = Vector2(483, 55)
+position = Vector2(426, 378)
 type = 1
 
 [node name="Bunny" parent="." instance=ExtResource("5_fdvdh")]
-position = Vector2(434, 95)
+position = Vector2(281, 439)
 speed = 700.0
 hunger_time = 3.0
 vision_dist = 300

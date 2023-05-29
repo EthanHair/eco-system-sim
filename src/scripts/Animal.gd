@@ -8,6 +8,7 @@ class_name Animal
 
 @export var sprite: AnimatedSprite2D
 @export var speed := 500.0
+@export var hungry_speed_mult := 2.0
 @export var type: Global.AnimalType
 @export var omnivore := true
 @export var prey_types: Array[Global.AnimalType]
@@ -49,9 +50,13 @@ func _physics_process(delta):
 	if nav_agent.is_navigation_finished():
 		return
 	
-	velocity = (nav_agent.get_next_path_position() - position).normalized() * speed * delta
-	
-	move_and_slide()
+	if nav_agent.is_target_reachable():
+		if hungry:
+			velocity = (nav_agent.get_next_path_position() - position).normalized() * speed * hungry_speed_mult * delta
+		else:
+			velocity = (nav_agent.get_next_path_position() - position).normalized() * speed * delta
+			
+		move_and_slide()
 
 func find_new_target():
 	if omnivore:

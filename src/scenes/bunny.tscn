@@ -23,6 +23,7 @@ size = Vector2(15, 15)
 
 [node name="Bunny" node_paths=PackedStringArray("sprite") instance=ExtResource("1_3ue1e")]
 sprite = NodePath("AnimatedSprite2D")
+hungry_speed_mult = 5.0
 type = 1
 omnivore = false
 food_types = Array[int]([1])
